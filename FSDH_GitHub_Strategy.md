@@ -18,19 +18,23 @@ FSDH initially started on GitHub with the [NRCan datahub-portal](https://github.
   - **Non-sensitive code**: Any code that does not contain sensitive information.
   - **Documentation**: General documentation, tutorials, and usage guides.
   - **Open-source tools and libraries**: Reusable components, utilities, and tools developed by FSDH that can benefit the broader scientific community.
+  - **Demo projects**: Sample demo projects, templates and Jupyter notebooks can help scientists kickstart new projects.
 - **Management**:
   - Regular reviews to ensure no sensitive information is inadvertently included.
   - Clear contribution guidelines to manage external contributions.
   - Continuous integration (CI) pipelines for public repositories to maintain code quality and integration.
+  - Every change goes through rigorous pull request process with peer reviewing plus automated regression testing before being merged
+  - FSDH Follows industry best practices for sharing and managing public code
 
 ### Sensitive Code on Azure DevOps
-- **Objective**: Protect sensitive and proprietary information, including secrets and personal information, while ensuring robust development and deployment workflows.
+- **Objective**: FSDH follows industry best practices, leading open source projects and uses Azure DevOps to protect sensitive and proprietary information, including secrets and personal information, while ensuring robust development and deployment workflows.
 - **Components**:
   - **Confidential code**: Code that deals with sensitive data, proprietary algorithms, or anything requiring restricted access.
   - **Secrets and protected information**: Any data or information that is protected under PIA or any other regulatory compliance.
   - **Deployment scripts**: Scripts and configurations used for deploying applications to production environments.
   - **Internal tools and libraries**: Components used internally by FSDH that should not be exposed publicly.
 - **Management**:
+  - Azure DevOps follows existing governance processes
   - Strict access controls and permissions to ensure only authorized personnel have access.
   - Secure CI/CD pipelines to automate testing and deployment processes without exposing sensitive information.
   - Regular audits and compliance checks to ensure adherence to security policies, including those required by PIA.
@@ -50,10 +54,13 @@ FSDH initially started on GitHub with the [NRCan datahub-portal](https://github.
 ### Security Integration
 - Integrate security practices into the development process from the start, ensuring that code is secure by design.
 - Automate security checks and vulnerability assessments in the CI/CD pipelines on both GitHub and Azure DevOps.
+- Vulnerabilities in existing packages will be flagged by Dependabot 
 
 ### Continuous Monitoring and Feedback
 - Implement continuous monitoring of codebases to detect and respond to security threats in real-time.
 - Use automated tools to provide immediate feedback to developers on security issues and code quality.
+- GitHub security tools include a secret scanner that will alert the team if any secret is committed by mistake in the public repository
+- Remediation process to be documented to handle accidental leakage of secrets in the source code
 
 ## Security and Compliance
 
